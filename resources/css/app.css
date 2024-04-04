@@ -1,3 +1,24 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.logo {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 900;
+}
+
+.active {
+    background-color: #334c65;
+    color: #fff;
+}
+
+.main-container{
+    margin-top: 3.8rem;
+}
