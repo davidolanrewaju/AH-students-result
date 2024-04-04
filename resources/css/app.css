@@ -13,3 +13,12 @@ body {
     font-family: "Comfortaa", sans-serif;
     font-weight: 900;
 }
+
+.active {
+    background-color: #334c65;
+    color: #fff;
+}
+
+.main-container{
+    margin-top: 3.8rem;
+}

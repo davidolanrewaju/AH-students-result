@@ -42,11 +42,11 @@
                 </ul>
             </div>
             <div class="flex justify-end gap-4 md:mt-0 md:gap-8">
-                <a href="#"
-                    class="block py-1 px-6 rounded border-2 border-transparent text-white bg-primary-500 hover:text-white">Sign
+                <a href="{{ route('student.signup') }}"
+                class="block py-1 px-6 rounded border-2 border-primary-500 text-primary-500  hover:bg-primary-500 hover:border-transparent hover:text-white">Sign
                     Up</a>
-                <a href="#"
-                    class="block py-1 px-6 rounded border-2 border-primary-500 text-primary-500  hover:bg-primary-500 hover:border-transparent hover:text-white">Login</a>
+                <a href="{{ route('student.login') }}"
+                class="block py-1 px-6 rounded border-2 border-transparent text-white bg-primary-500 hover:text-white">Login</a>
             </div>
             <button data-collapse-toggle="navbar-solid-bg" type="button"
                 class="order-first mb-3 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary-600 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:ring-gray-200"

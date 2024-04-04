@@ -70,7 +70,7 @@ class StudentController extends Controller
         // dd($credentials);
         // $matric_no_credentials = $request->only('matric_no, password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
             // dd(auth()->user());
             return redirect(route('student.show', ['student' => Auth::id()]));

@@ -42,10 +42,10 @@
                 </ul>
             </div>
             <div class="flex justify-end gap-4 md:mt-0 md:gap-8">
-                <a href="#"
+                <a href="{{ route('student.signup') }}"
                     class="block py-1 px-6 rounded border-2 border-transparent text-white bg-primary-500 hover:text-white">Sign
                     Up</a>
-                <a href="#"
+                <a href="{{ route('student.login') }}"
                     class="block py-1 px-6 rounded border-2 border-primary-500 text-primary-500  hover:bg-primary-500 hover:border-transparent hover:text-white">Login</a>
             </div>
             <button data-collapse-toggle="navbar-solid-bg" type="button"
