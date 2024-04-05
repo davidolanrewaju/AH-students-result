@@ -47,7 +47,7 @@ class StudentController extends Controller
 
         Auth::guard('student')->login($student);
 
-        return redirect(route('student.show', ['student' => $student]));
+        return redirect(route('student.show'));
     }
 
     /**
