@@ -45,7 +45,7 @@ class StudentController extends Controller
             ]
         );
 
-        Auth::login($student);
+        Auth::guard('student')->login($student);
 
         return redirect(route('student.show', ['student' => $student]));
     }
@@ -67,13 +67,11 @@ class StudentController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        // dd($credentials);
-        // $matric_no_credentials = $request->only('matric_no, password');
 
-        if (Auth::attempt($credentials, $request->filled('remember'))) {
+        if (Auth::guard('student')->attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
-            // dd(auth()->user());
-            return redirect(route('student.show', ['student' => Auth::id()]));
+
+            return redirect(route('student.show'));
         }
 
         return back()->withErrors(['email' => 'Invalid credentials'])->withInput(); // Redirect back with errors
@@ -83,34 +81,35 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student $student)
+    public function show()
     {
+        $student = Auth::guard('student')->user();
         return view('student.dashboard', [
             'student' => $student,
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Student $student)
-    {
-        //
-    }
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  */
+    // public function edit(Student $student)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Student $student)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, Student $student)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Student $student)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(Student $student)
+    // {
+    //     //
+    // }
 }
