@@ -9,25 +9,71 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    // /**
-    //  * Display a listing of the resource.
-    //  */
-    // public function index()
-    // {
-    //     //
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Return signup view
     public function signup()
     {
         return view('admin.signup');
     }
 
-   /**
-     * Store a newly created resource in storage.
-     */
+
+    //Return Login view
+    public function login()
+    {
+        return view('admin.login');
+    }
+
+
+    //Return Dashboard view
+    public function dashboard()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.dashboard', [
+            'admin' => $admin,
+        ]);
+    }
+
+
+    //Return courses view
+    public function courses()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.courses', [
+            'admin' => $admin,
+        ]);
+    }
+
+
+    //Return courses view
+    public function timetable()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.timetable', [
+            'admin' => $admin,
+        ]);
+    }
+
+
+    //Return uploadResult view
+    public function uploadResults()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.upload', [
+            'admin' => $admin,
+        ]);
+    }
+
+
+    //Return settings view
+    public function settings()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.settings', [
+            'admin' => $admin,
+        ]);
+    }
+
+
+    //Authenticate user
     public function checkSignup(Request $request)
     {
 
@@ -55,17 +101,7 @@ class AdminController extends Controller
     }
 
 
-     /**
-     * Show the form for accessing into a resource.
-     */
-    public function login()
-    {
-        return view('admin.login');
-    }
-
-    /**
-     * Check login resource in storage.
-     */
+    //Authorize user
     public function checkLogin(Request $request)
     {
         $credentials = $request->validate([
@@ -82,39 +118,13 @@ class AdminController extends Controller
         return back()->withErrors(['email' => 'Invalid credentials'])->withInput(); // Redirect back with errors
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function dashboard()
-    {
-        $admin = Auth::guard('admin')->user();
-        return view('admin.dashboard', [
-            'admin' => $admin,
-        ]);
+    //Log user out
+    public function logout(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('admin.login'));
     }
-
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(Admin $admin)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, Admin $admin)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(Admin $admin)
-    // {
-    //     //
-    // }
 }

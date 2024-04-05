@@ -13,11 +13,16 @@ Route::prefix('student')->group(function() {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
-    Route::get('/signup', [AdminController::class, 'signup'])->name('admin.signup');
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::post('/loggedin', [AdminController::class, 'checkLogin'])->name('admin.checkLogin');
-    Route::post('/signedup', [AdminController::class, 'checkSignup'])->name('admin.checkSignup');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login'); //Login
+    Route::get('/signup', [AdminController::class, 'signup'])->name('admin.signup'); //Signup
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout'); //Logout
+    Route::get('/courses', [AdminController::class, 'courses'])->name('admin.courses'); //Courses
+    Route::get('/settings', [AdminController::class, 'settings'])->name('admin.settings'); //Settings
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard'); //Dashboard
+    Route::get('/timetable', [AdminController::class, 'timetable'])->name('admin.timetable'); //Timetable
+    Route::post('/loggedin', [AdminController::class, 'checkLogin'])->name('admin.checkLogin'); //Check login
+    Route::post('/signedup', [AdminController::class, 'checkSignup'])->name('admin.checkSignup'); //Check signup
+    Route::get('/upload-results', [AdminController::class, 'uploadResults'])->name('admin.upload'); //Upload
 });
 
 // Route::get($uri);
