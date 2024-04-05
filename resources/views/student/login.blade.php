@@ -62,7 +62,7 @@
 
     <form action="{{ route('student.checkLogin') }}" method="POST" class="max-w-sm md:max-w-lg py-24 mx-auto">
         @csrf
-        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Log In</h2>
+        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Log In <span>(Student)</span></h2>
         <div class="mb-4">
             <label for="email" class="block mb-2 text-sm font-semibold text-gray-900">Email
                 Address or Matric No.</label>

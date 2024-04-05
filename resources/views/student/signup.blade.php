@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/acot-favicon.svg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Laravel</title>
 </head>
 
 <body>
-
-
     <nav class="border-gray-200 bg-secondary-400">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between md:flex-row mx-auto p-4">
             <a href="#" class="logo flex items-center">
@@ -62,7 +61,7 @@
 
     <form action="{{ route('student.checkSignup') }}" method="POST" class="max-w-sm md:max-w-3xl py-8 mx-auto">
         @csrf
-        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Sign Up</h2>
+        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Sign Up <span class="normal-case">(Student)</span></h2>
         <div class="grid gap-6 mb-4 md:grid-cols-2">
             <select name="login_option" id="login_option"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-200 focus:border-secondary-200 block w-full p-2.5">
@@ -155,6 +154,25 @@
             class="text-white bg-secondary-500 hover:bg-secondary-800 focus:ring-4 focus:outline-none focus:ring-primary-100 font-medium rounded-lg text-sm w-full sm:w-auto px-8 py-3 text-center">Sign
             Up</button>
     </form>
+
+
+    {{-- Implement view change on option select --}}
+    <script>
+        document.getElementById("login_option").addEventListener("change", function(event) {
+            var selectedOption = this.value;
+
+            // Construct the URL based on the selected option
+            var redirectUrl;
+            if (selectedOption === "student") {
+                redirectUrl = "{{ route('student.signup') }}";
+            } else if (selectedOption === "admin") {
+                redirectUrl = "{{ route('admin.signup') }}";
+            }
+
+            // Redirect the user to the constructed URL
+            window.location.href = redirectUrl;
+        });
+    </script>
 </body>
 
 </html>
