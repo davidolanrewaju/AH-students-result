@@ -272,30 +272,34 @@
                         class="active link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
                         <div class="text-sm font-medium">Dashboard</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.courses') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">Course Registration</div>
+                        <div class="text-sm font-medium">Courses</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.timetable') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">School Fees</div>
+                        <div class="text-sm font-medium">Timetable/Calendar</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.upload') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">Results</div>
+                        <div class="text-sm font-medium">Upload Results</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.settings') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
                         <div class="text-sm font-medium">Settings</div>
                     </a>
-                    <a href="#" class="flex items-center gap-4 my-8 ml-8 p-4 w-36 bg-primary-800 rounded-lg">
-                        <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 16 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
-                        </svg>
-                        <div class="text-sm font-medium text-white">Logout</div>
-                    </a>
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="flex items-center gap-4 my-16 mx-8 p-4 max-w-36 bg-primary-800 rounded-lg">
+                            <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 16 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
+                            </svg>
+                            <div class="text-sm font-medium text-white">Logout</div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -307,31 +311,34 @@
                         class="active link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
                         <div class="text-sm font-medium">Dashboard</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.courses') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">Course Registration</div>
+                        <div class="text-sm font-medium">Courses</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.timetable') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">School Fees</div>
+                        <div class="text-sm font-medium">Timetable/Calendar</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.upload') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
-                        <div class="text-sm font-medium">Results</div>
+                        <div class="text-sm font-medium">Upload Results</div>
                     </a>
-                    <a href="#"
+                    <a href="{{ route('admin.settings') }}"
                         class="link block p-8 text-start text-primary-800 hover:bg-primary-400 hover:text-white">
                         <div class="text-sm font-medium">Settings</div>
                     </a>
-                    <a href="#"
-                        class="flex items-center gap-4 my-16 mx-8 p-4 max-w-36 bg-primary-800 rounded-lg">
-                        <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 16 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
-                        </svg>
-                        <div class="text-sm font-medium text-white">Logout</div>
-                    </a>
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="flex items-center gap-4 my-16 mx-8 p-4 max-w-36 bg-primary-800 rounded-lg">
+                            <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 16 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
+                            </svg>
+                            <div class="text-sm font-medium text-white">Logout</div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -346,7 +353,7 @@
                     class="flex flex-col items-start p-6 bg-secondary-400 border rounded-2xl shadow-md hover:bg-primary-500">
                     <img class="pb-6 w-14 h-14" src="{{ asset('images/courses.svg') }}" alt="course">
                     <div>
-                        <h5 class="mb-1 text-2xl font-bold text-white">Courses Registered</h5>
+                        <h5 class="mb-1 text-2xl font-bold text-white">Courses</h5>
                         <p class="font-normal text-white">10 Courses</p>
                     </div>
                 </a>
@@ -354,29 +361,33 @@
                     class="flex flex-col items-start p-6 bg-secondary-400 border rounded-2xl shadow-md hover:bg-primary-500">
                     <img class="pb-6 w-14 h-14" src="{{ asset('images/results.svg') }}" alt="">
                     <div>
-                        <h5 class="mb-1 text-2xl font-bold text-white">Results Published</h5>
+                        <h5 class="mb-1 text-2xl font-bold text-white">Uploaded Results</h5>
                         <p class="font-normal text-white">0 Results</p>
                     </div>
                 </a>
                 <a href="#"
                     class="flex flex-col items-start p-6 bg-secondary-400 border rounded-2xl shadow-md hover:bg-primary-500">
-                    <img class="pb-6 w-14 h-14" src="{{ asset('images/fees.svg') }}" alt="">
+                    <svg class="pb-6 w-14 h-14 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"
+                            clip-rule="evenodd" />
+                    </svg>
                     <div>
-                        <h5 class="mb-1 text-2xl font-bold text-white">Fees Paid</h5>
-                        <p class="font-normal text-white">100,000 NGN</p>
+                        <h5 class="mb-1 text-2xl font-bold text-white">Published papers</h5>
+                        <p class="font-normal text-white">5 papers</p>
                     </div>
                 </a>
             </div>
 
-            {{-- <div class="grid grid-rows-2 gap-16 mt-20 mb-32">
+            <div class="grid grid-rows-2 gap-16 mt-20 mb-32">
                 <div class="flex flex-col items-start py-2 border border-primary-100 rounded-2xl">
                     <div class="w-full mb-8">
                         <h5 class="text-2xl font-bold text-primary-500 pb-1 px-6">Announcements</h5>
                         <hr class="bg-primary-100 h-px border-0">
                     </div>
                     <div class="m-auto py-8">
-                        <img class="w-48 h-48" src="{{ asset('images/announcement.svg') }}"
-                            alt="course">
+                        <img class="w-48 h-48" src="{{ asset('images/announcement.svg') }}" alt="course">
                         <p class="font-normal text-2xl text-primary-500">No announcements yet</p>
                     </div>
                 </div>
@@ -386,12 +397,11 @@
                         <hr class="bg-primary-100 h-px border-0">
                     </div>
                     <div class="m-auto py-8">
-                        <img class="w-48 h-48" src="{{ asset('images/activities.svg') }}"
-                            alt="course">
+                        <img class="w-48 h-48" src="{{ asset('images/activities.svg') }}" alt="course">
                         <p class="font-normal text-2xl text-primary-500">No activities yet</p>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </section>
 
