@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use App\Models\Student;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         Student::factory(30)->create();
+        Admin::factory(20)->create();
     }
 }

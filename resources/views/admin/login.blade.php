@@ -42,10 +42,10 @@
                 </ul>
             </div>
             <div class="flex justify-end gap-4 md:mt-0 md:gap-8">
-                <a href="{{ route('student.signup') }}"
+                <a href="{{ route('admin.signup') }}"
                 class="block py-1 px-6 rounded border-2 border-primary-500 text-primary-500  hover:bg-primary-500 hover:border-transparent hover:text-white">Sign
                     Up</a>
-                <a href="{{ route('student.login') }}"
+                <a href="{{ route('admin.login') }}"
                 class="block py-1 px-6 rounded border-2 border-transparent text-white bg-primary-500 hover:text-white">Login</a>
             </div>
             <button data-collapse-toggle="navbar-solid-bg" type="button"
@@ -60,9 +60,9 @@
         </div>
     </nav>
 
-    <form action="{{ route('student.checkLogin') }}" method="POST" class="max-w-sm md:max-w-lg py-24 mx-auto">
+    <form action="{{ route('admin.checkLogin') }}" method="POST" class="max-w-sm md:max-w-lg py-24 mx-auto">
         @csrf
-        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Log In <span>(Student)</span></h2>
+        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Log In <span class="normal-case">(Admin)</span></h2>
         <div class="mb-4">
             <label for="email" class="block mb-2 text-sm font-semibold text-gray-900">Email
                 Address or Matric No.</label>

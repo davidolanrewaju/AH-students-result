@@ -41,10 +41,10 @@
                 </ul>
             </div>
             <div class="flex justify-end gap-4 md:mt-0 md:gap-8">
-                <a href="{{ route('student.signup') }}"
+                <a href="{{ route('admin.signup') }}"
                     class="block py-1 px-6 rounded border-2 border-transparent text-white bg-primary-500 hover:text-white">Sign
                     Up</a>
-                <a href="{{ route('student.login') }}"
+                <a href="{{ route('admin.login') }}"
                     class="block py-1 px-6 rounded border-2 border-primary-500 text-primary-500  hover:bg-primary-500 hover:border-transparent hover:text-white">Login</a>
             </div>
             <button data-collapse-toggle="navbar-solid-bg" type="button"
@@ -59,9 +59,9 @@
         </div>
     </nav>
 
-    <form action="{{ route('student.checkSignup') }}" method="POST" class="max-w-sm md:max-w-3xl py-8 mx-auto">
+    <form action="{{ route('admin.checkSignup') }}" method="POST" class="max-w-sm md:max-w-lg py-8 mx-auto">
         @csrf
-        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Sign Up <span class="normal-case">(Student)</span></h2>
+        <h2 class="text-4xl font-bold text-primary-500 mb-6 uppercase">Sign Up <span class="normal-case">(Admin)</span></h2>
         <div class="grid gap-6 mb-4 md:grid-cols-2">
             <select name="login_option" id="login_option"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-200 focus:border-secondary-200 block w-full p-2.5">
@@ -69,19 +69,8 @@
                 <option value="student">Student</option>
                 <option value="admin">Admin</option>
             </select>
-            <select name="level_option" id="level_option"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-200 focus:border-secondary-200 block w-full p-2.5">
-                <option disabled selected>Select Level</option>
-                <option value=100>100</option>
-                <option value=200>200</option>
-                <option value=300>300</option>
-                <option value=400>400</option>
-            </select>
-            @error('level')
-                <span class="text-md text-red-500">{{ $message }}</span>
-            @enderror
         </div>
-        <div class="grid gap-6 mb-4 md:grid-cols-2">
+        <div class="grid grid-rows-2 gap-6 mb-4">
             <div>
                 <label for="first_name" class="block mb-2 text-sm font-semibold text-gray-900">First
                     Name</label>
@@ -109,17 +98,6 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-200 focus:border-secondary-200 block w-full p-2.5"
                     placeholder="Yusuf" required />
                 @error('middle_name')
-                    <span class="text-md text-red-500">{{ $message }}</span>
-                @enderror
-            </div>
-            <div>
-                <label for="matric_no" class="block mb-2 text-sm font-semibold text-gray-900">Matriculation
-                    Number
-                </label>
-                <input type="text" id="matric_no" name="matric_no"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-200 focus:border-secondary-200 block w-full p-2.5"
-                    placeholder="CS/2019/024" required />
-                @error('matric_no')
                     <span class="text-md text-red-500">{{ $message }}</span>
                 @enderror
             </div>
