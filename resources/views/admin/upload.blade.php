@@ -343,10 +343,25 @@
             </div>
         </div>
 
-        <div
-            class="flex-1 bg-gray-200 max-w-md my-14 m-auto rounded-2xl py-16 flex flex-col items-center justify-center md:max-w-full md:ml-72 md:mr-10 lg:ml-96 lg:mr-28">
-            <img class="w-6/12" src="{{ asset('images/undraw_programming_re_kg9v.svg') }}" alt="">
-            <h2 class="text-3xl pt-8 font-bold">Coming Soon!!!</h2>
+        <div class="flex-1 body-container mx-8 md:ml-72 md:mr-10 lg:ml-80 lg:mr-20">
+            <div class="grid gap-16 mt-8 mb-14">
+                <div class="flex flex-col items-start py-2 border border-primary-100 rounded-2xl">
+                    <div class="w-full mb-8">
+                        <h5 class="text-xl md:2xl font-bold text-primary-500 pb-1 px-6">Uploaded Results</h5>
+                        <hr class="bg-primary-100 h-px border-0">
+                    </div>
+                    <div class="flex flex-col items-center justify-center m-auto py-8">
+                        <img class="md:w-48 md:h-48 w-40 h-40" src="{{ asset('images/undraw_no_data_re_kwbl.svg')}}"
+                            alt="course">
+                        <p class="font-normal text-xl md:text-2xl text-primary-500">No results yet</p>
+                    </div>
+                </div>
+            </div>
+            <form class="flex items-center gap-4" action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input class="bg-gray-300 rounded" type="file" name="file" id="file">
+                <button class="bg-secondary-600 py-2 px-4 text-white rounded hover:ring-2 hover:ring-secondary-300" type="submit">Upload</button>
+            </form>
         </div>
     </section>
 

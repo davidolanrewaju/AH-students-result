@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentScoreController;
 
 Route::prefix('student')->group(function() {
     Route::get('/login', [StudentController::class, 'login'])->name('student.login');
@@ -24,6 +25,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/signedup', [AdminController::class, 'checkSignup'])->name('admin.checkSignup'); //Check signup
     Route::get('/upload-results', [AdminController::class, 'uploadResults'])->name('admin.upload'); //Upload
 });
+
+Route::post('/import', [StudentScoreController::class, 'import'])->name('import');
 
 // Route::get($uri);
 // Route::put($uri, $callback);
